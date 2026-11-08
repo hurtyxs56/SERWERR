@@ -1,4 +1,4 @@
-param([Parameter(Mandatory=$true)][string]$GameDir,[string]$Config=(Join-Path $PSScriptRoot 'autohost.json'))
+﻿param([Parameter(Mandatory=$true)][string]$GameDir,[string]$Config=(Join-Path $PSScriptRoot 'autohost.json'))
 $ErrorActionPreference='Stop'
 $GameDir=(Resolve-Path -LiteralPath $GameDir).Path
 $Config=(Resolve-Path -LiteralPath $Config).Path

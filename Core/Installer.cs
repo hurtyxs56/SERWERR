@@ -30,7 +30,7 @@ public sealed class Installer {
   var root=ServerFiles.Root(game);Directory.CreateDirectory(root);using var gate=new FileStream(Path.Combine(root,"install.lock"),FileMode.OpenOrCreate,FileAccess.ReadWrite,FileShare.None);
   var manifestPath=Path.Combine(root,"installation.json");var previous=File.Exists(manifestPath)?ServerFiles.Read<Installation>(manifestPath):null;
   if(previous!=null&&(previous.Schema!=1||!string.Equals(Path.GetFullPath(previous.GameDir),game,StringComparison.OrdinalIgnoreCase)))throw new IOException("Manifest instalacji dotyczy innej gry.");
-  var files=Directory.GetFiles(payload,"*",SearchOption.AllDirectories).OrderBy(x=>x).ToArray();var next=previous==null?new Installation{GameDir=game}:ServerFiles.Read<Installation>(manifestPath);next.Version="0.2.0-alpha.1";
+  var files=Directory.GetFiles(payload,"*",SearchOption.AllDirectories).OrderBy(x=>x).ToArray();var next=previous==null?new Installation{GameDir=game}:ServerFiles.Read<Installation>(manifestPath);next.Version="0.2.1-alpha.1";
   var tx=Path.Combine(root,"Backups",Guid.NewGuid().ToString("N"));Directory.CreateDirectory(tx);var written=new List<(string target,string? restore)>();int counter=0;
   try{
    foreach(var source in files){var relative=Path.GetRelativePath(payload,source).Replace('\\','/');bool loader=relative=="version.dll"||relative.StartsWith("MelonLoader/",StringComparison.OrdinalIgnoreCase);

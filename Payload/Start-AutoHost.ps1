@@ -1,4 +1,4 @@
-param(
+﻿param(
  [Parameter(Mandatory=$true)][string]$GameDir,
  [string]$Config = (Join-Path $PSScriptRoot 'autohost.json'),
  [int]$MaxRestarts = 3,

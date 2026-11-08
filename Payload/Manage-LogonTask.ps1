@@ -1,4 +1,4 @@
-param([Parameter(Mandatory=$true)][string]$GameDir,[Parameter(Mandatory=$true)][string]$TaskName,[ValidateSet('Enable','Disable')][string]$Mode)
+﻿param([Parameter(Mandatory=$true)][string]$GameDir,[Parameter(Mandatory=$true)][string]$TaskName,[ValidateSet('Enable','Disable')][string]$Mode)
 $ErrorActionPreference='Stop'
 if($TaskName -notmatch '^StellarDrive AutoHost [A-F0-9]{12}$'){throw 'Nieprawidłowa nazwa zadania.'}
 try {

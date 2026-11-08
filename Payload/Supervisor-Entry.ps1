@@ -1,4 +1,4 @@
-param([Parameter(Mandatory=$true)][string]$GameDir,[Parameter(Mandatory=$true)][string]$Config)
+﻿param([Parameter(Mandatory=$true)][string]$GameDir,[Parameter(Mandatory=$true)][string]$Config)
 $ErrorActionPreference = 'Stop'
 $serverRoot = Split-Path -Parent $Config
 Start-Transcript -LiteralPath (Join-Path $serverRoot 'supervisor.log') -Append | Out-Null

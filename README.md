@@ -1,4 +1,4 @@
-# StellarDrive Dedicated AutoHost — 0.2.0-alpha.1
+# StellarDrive Dedicated AutoHost — 0.2.1-alpha.1
 
 Instalator Windows i panel dla rzeczywistego prototypu AutoHost 0.1.2-alpha.1. **To wydanie eksperymentalne, nie potwierdzony serwer produkcyjny 24/7.** Lokalnie sprawdzono natywny serwer Steam/FishNet bez lokalnego gracza i bez grafiki. Nie wykonano testu drugiego konta Steam ani Windows VPS. Nie nazywamy samego procesu działającym multiplayerem.
 

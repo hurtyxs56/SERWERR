@@ -1,4 +1,4 @@
-param([string]$DataDir=$PSScriptRoot)
+﻿param([string]$DataDir=$PSScriptRoot)
 $ErrorActionPreference='Stop'
 $DataDir=(Resolve-Path -LiteralPath $DataDir).Path
 $status=Get-Content -LiteralPath (Join-Path $DataDir 'status.json') -Raw | ConvertFrom-Json

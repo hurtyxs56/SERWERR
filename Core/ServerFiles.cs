@@ -24,7 +24,7 @@ public sealed class OwnedFile {
 }
 public sealed class Installation {
  public int Schema {get;set;}=1;
- public string Version {get;set;}="0.2.0-alpha.1";
+ public string Version {get;set;}="0.2.1-alpha.1";
  public string GameDir {get;set;}="";
  public List<OwnedFile> Files {get;set;}=new();
  public bool Autostart {get;set;}
