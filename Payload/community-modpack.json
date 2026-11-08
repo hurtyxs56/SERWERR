@@ -1,0 +1,923 @@
+{
+  "SchemaVersion": 1,
+  "Id": "stellardrive-odyssey",
+  "Name": "StellarDrive: Odyssey + Community",
+  "Version": "1.2.0",
+  "GameVersion": "Demo 0.8.2",
+  "SteamAppId": "4689730",
+  "GameHashes": {
+    "StellarDrive_Data/Managed/Assembly-CSharp.dll": "25D3F704C52EF689EA04E1EDDDCDB014914D8CBCE071F88871066A6B1375715B",
+    "StellarDrive.exe": "608AA60810D17F7F2E879715E5A8943D5AFE7F49F799A4B02E2D5BEE1E19334D"
+  },
+  "LoaderVersion": "0.7.3",
+  "LoaderArchiveId": "melonloader",
+  "Changelog": "Rozszerzenie społecznościowe. Zgodność ograniczona do zakresu raportu testowego; multiplayer i wszystkie mechaniki wymagają osobnego sprawdzenia. Pobieranie wyłącznie z oryginalnych źródeł autorów.",
+  "Archives": [
+    {
+      "Sha256": "A7882421B40E85A8D5083FF9E9C88832C5F5E0381DC5DF211069E4F81A5513D6",
+      "Url": "https://github.com/FalconDevX/stellardrive-mods/archive/30b08e62da753ccf0a5901ea38a26c1aca1ef363.zip",
+      "Id": "odyssey"
+    },
+    {
+      "Sha256": "5B2B2F3D1CD42B59EC886C5BDC2663EDAE87A0097A4F4A8F58C0965A99DDA416",
+      "Url": "https://github.com/LavaGang/MelonLoader/releases/download/v0.7.3/MelonLoader.x64.zip",
+      "Id": "melonloader"
+    },
+    {
+      "Id": "community-sdmodkit",
+      "Url": "https://github.com/Krunk-theduck/SDModKit/releases/download/v1.3.3/SDModKit.zip",
+      "Sha256": "9c09fb3edbc6101f666ed742dfed2a509df0a7d11bff1ac6b89e4af5210f4ead"
+    },
+    {
+      "Id": "community-stellardrive-arsenal",
+      "Url": "https://github.com/tidic84/StellarDrive-Arsenal/releases/download/v1.12.1/StellarDrive-Arsenal.zip",
+      "Sha256": "6576ded1130bee0c939b2d607d67d010c3e0f81e2504a314f96098dea226cb20"
+    },
+    {
+      "Id": "community-stellardrive-balancedmaterials",
+      "Url": "https://github.com/jollyname/StellarDrive-BalancedMaterials/releases/download/v1.0.0/StellarDrive-BalancedMaterials.zip",
+      "Sha256": "55f85da8f65e1ee640b5db712548e480924e0270f194a28f22639a8009da2b73"
+    },
+    {
+      "Id": "community-stellardrive-breakerbox",
+      "Url": "https://github.com/snowzy-byte/StellarDrive-BreakerBox/releases/download/v1.2.0/StellarDrive-BreakerBox.zip",
+      "Sha256": "5e971c9c3e97ae6a15229352e9561d4200872fc6b7a54490b65f04be55c529a4"
+    },
+    {
+      "Id": "community-stellardrive-chess",
+      "Url": "https://github.com/3ndl3ssSkys/StellarDrive-Chess/releases/download/v1.0.0/StellarDrive-Chess.zip",
+      "Sha256": "9c74df46d7f0584837cac82e0769f46d222ad16f3813a61b148fb763656194ce"
+    },
+    {
+      "Id": "community-stellardrive-customseat",
+      "Url": "https://github.com/tidic84/StellarDrive-CustomSeat/releases/download/v1.1.1/StellarDrive-CustomSeat.zip",
+      "Sha256": "fb53a6deb7bc21129cab6726887bb628b70bc0aee625b6b12d9b354ec067165f"
+    },
+    {
+      "Id": "community-stellardrive-demo-satisfactor",
+      "Url": "https://github.com/Romalaure/StellarDrive-demo-satisfactor/releases/download/v0.20.0/StellarDrive-demo-satisfactor.zip",
+      "Sha256": "67266742723971fc9baec8eaef1e277ac0970ed4dcb0117c89543ac60cce9418"
+    },
+    {
+      "Id": "community-stellardrive-demo-tf-advanced",
+      "Url": "https://github.com/Romalaure/StellarDrive-demo-TF-advanced/releases/download/v0.45.1/StellarDrive-demo-TF-advanced.zip",
+      "Sha256": "a2bd8826cea4041ce4c0754fcf468ffe1bb58835223eb996868e328a9578c1e7"
+    },
+    {
+      "Id": "community-stellardrive-demomodlist",
+      "Url": "https://github.com/3ndl3ssSkys/StellarDrive-DemoModList/releases/download/v1.0.0/StellarDrive-DemoModList.zip",
+      "Sha256": "9833d76af3f37a1e0961e0251f42ae81b1039708d85ec0a6727b25f66268de0e"
+    },
+    {
+      "Id": "community-stellardrive-handybeacontracker",
+      "Url": "https://github.com/VILICZECH/StellarDrive-HandyBeaconTracker/releases/download/v1.0.0/StellarDrive-HandyBeaconTracker.zip",
+      "Sha256": "986b59284308c1ceff191fc4748d041367681397d8ecc87c315d7e8bf9a026d4"
+    },
+    {
+      "Id": "community-stellardrive-moremath",
+      "Url": "https://github.com/MausCD/StellarDrive-MoreMath/releases/download/v1.3.0/StellarDrive-MoreMath.zip",
+      "Sha256": "906c9cc2c06352fe06baa0d51f59726b998cff63bb6bc6802b804517c1efc0f5"
+    },
+    {
+      "Id": "community-stellardrive-safetyrails",
+      "Url": "https://github.com/3ndl3ssSkys/StellarDrive-SafetyRails/releases/download/v1.0.0/StellarDrive-SafetyRails.zip",
+      "Sha256": "5b79883679a28b9cdfbfd1d6404c984234df5bf12c97827db95c8a54dca92ccc"
+    },
+    {
+      "Id": "community-stellardrive-unlimitedplayers",
+      "Url": "https://github.com/VILICZECH/StellarDrive-UnlimitedPlayers/releases/download/v1.0.0/StellarDrive-UnlimitedPlayers.zip",
+      "Sha256": "16c689258c5e08bf8149be3e81d4953f420e95aa1a9c90df424941b84dc02fbb"
+    },
+    {
+      "Id": "community-stellardrivedemo-onewaytransfers",
+      "Url": "https://github.com/GruenerAdler/StellarDriveDemo-OneWayTransfers/releases/download/v1.1.0/StellarDriveDemo-OneWayTransfers.zip",
+      "Sha256": "0c6a1e9f98ec0fd5a771466e8374dd6952b02ef93b02d7e7ccacdf163a0bac4e"
+    },
+    {
+      "Id": "community-stellardriveitemlines",
+      "Url": "https://github.com/Krunk-theduck/StellarDriveItemLines/releases/download/v0.1.2/StellarDriveItemLines.zip",
+      "Sha256": "e14a901caac4ec3749a37ffb0ed9dd5bde8b1837e47cba51b4f2c69283556129"
+    },
+    {
+      "Id": "community-stellardriveupgradetable",
+      "Url": "https://github.com/Krunk-theduck/StellarDriveUpgradeTable/releases/download/v0.1.2/StellarDriveUpgradeTable.zip",
+      "Sha256": "2836d06f93af7fd4b936547531aa73e72e8f52fbb6ba7849a35e87634df4ad35"
+    }
+  ],
+  "Mods": [
+    {
+      "Id": "stellardrive-crouch",
+      "Name": "Crouch",
+      "Version": "0.1.4",
+      "Author": "mateu",
+      "Description": "Kucanie pod lewym klawiszem Ctrl.",
+      "Dependencies": [],
+      "Compatibility": "StellarDrive Demo 0.8.2",
+      "License": "Brak licencji redystrybucji",
+      "Redistributable": false,
+      "Files": [
+        {
+          "Entry": "stellardrive-mods-30b08e62da753ccf0a5901ea38a26c1aca1ef363/dist/Mods/Crouch.dll",
+          "Sha256": "463CC8CFB0F5F203896A4A6DD73D9809AE209AD5D5B7A25CC26D6CF261262F5D",
+          "Target": "Mods/Crouch.dll",
+          "PreserveExisting": false,
+          "ArchiveId": "odyssey"
+        }
+      ]
+    },
+    {
+      "Id": "stellardrive-dropitems",
+      "Name": "Drop Items",
+      "Version": "0.1.2",
+      "Author": "mateu",
+      "Description": "Wyrzucanie przedmiotów z ekwipunku i paska narzędzi.",
+      "Dependencies": [],
+      "Compatibility": "StellarDrive Demo 0.8.2",
+      "License": "Brak licencji redystrybucji",
+      "Redistributable": false,
+      "Files": [
+        {
+          "Entry": "stellardrive-mods-30b08e62da753ccf0a5901ea38a26c1aca1ef363/dist/Mods/DropItems.dll",
+          "Sha256": "72061188ECD69D108B8BC04786FE74BC19C5BBBEDBFA620E06909D69E1256D1E",
+          "Target": "Mods/DropItems.dll",
+          "PreserveExisting": false,
+          "ArchiveId": "odyssey"
+        }
+      ]
+    },
+    {
+      "Id": "stellardrive-flora",
+      "Name": "Flora",
+      "Version": "0.5.2",
+      "Author": "mateu",
+      "Description": "Kwiaty, krzewy i dodatkowa roślinność na planecie.",
+      "Dependencies": [],
+      "Compatibility": "StellarDrive Demo 0.8.2",
+      "License": "Brak licencji redystrybucji",
+      "Redistributable": false,
+      "Files": [
+        {
+          "Entry": "stellardrive-mods-30b08e62da753ccf0a5901ea38a26c1aca1ef363/dist/Mods/Flora.dll",
+          "Sha256": "0B8B409EC2ECE374554A4F6C21A5E495D9797FBFB61703C3B289AC313515FF4F",
+          "Target": "Mods/Flora.dll",
+          "PreserveExisting": false,
+          "ArchiveId": "odyssey"
+        }
+      ]
+    },
+    {
+      "Id": "stellardrive-fpscounter",
+      "Name": "FPS Counter",
+      "Version": "0.1.0",
+      "Author": "mateu",
+      "Description": "Licznik klatek na sekundę przełączany klawiszem F3.",
+      "Dependencies": [],
+      "Compatibility": "StellarDrive Demo 0.8.2",
+      "License": "Brak licencji redystrybucji",
+      "Redistributable": false,
+      "Files": [
+        {
+          "Entry": "stellardrive-mods-30b08e62da753ccf0a5901ea38a26c1aca1ef363/dist/Mods/FpsCounter.dll",
+          "Sha256": "48D27541DADD2893916C352E637D95E1BF4DAF37CADB25E67188111F803A894A",
+          "Target": "Mods/FpsCounter.dll",
+          "PreserveExisting": false,
+          "ArchiveId": "odyssey"
+        }
+      ]
+    },
+    {
+      "Id": "stellardrive-odyssey-building",
+      "Name": "Odyssey Building",
+      "Version": "1.0.5",
+      "Author": "mateu",
+      "Description": "Duże bramy, włazy, schody, skrzynie, pontony i elementy mechaniczne.",
+      "Dependencies": [
+        "stellardrive-odyssey-core"
+      ],
+      "Compatibility": "StellarDrive Demo 0.8.2",
+      "License": "Brak licencji redystrybucji",
+      "Redistributable": false,
+      "Files": [
+        {
+          "Entry": "stellardrive-mods-30b08e62da753ccf0a5901ea38a26c1aca1ef363/dist/Mods/Odyssey.Building.dll",
+          "Sha256": "F14F1C6ADA99C5599B139293C37878E153040DFE2BD91BC6E701D192C60C3CEF",
+          "Target": "Mods/Odyssey.Building.dll",
+          "PreserveExisting": false,
+          "ArchiveId": "odyssey"
+        }
+      ]
+    },
+    {
+      "Id": "stellardrive-odyssey-core",
+      "Name": "Odyssey Core",
+      "Version": "1.2.6",
+      "Author": "mateu",
+      "Description": "Wspólna podstawa modułów: części, badania i menu budowania.",
+      "Dependencies": [],
+      "Compatibility": "StellarDrive Demo 0.8.2",
+      "License": "Brak licencji redystrybucji",
+      "Redistributable": false,
+      "Files": [
+        {
+          "Entry": "stellardrive-mods-30b08e62da753ccf0a5901ea38a26c1aca1ef363/dist/Mods/Odyssey.Core.dll",
+          "Sha256": "D3CDAD0B42BFD9DF28E2739F4FD6BE65FA317A2677A9C8F31C0E0C73F067BD84",
+          "Target": "Mods/Odyssey.Core.dll",
+          "PreserveExisting": false,
+          "ArchiveId": "odyssey"
+        }
+      ]
+    },
+    {
+      "Id": "stellardrive-odyssey-gear",
+      "Name": "Odyssey Gear",
+      "Version": "1.0.2",
+      "Author": "mateu",
+      "Description": "Plecak odrzutowy, działo laserowe, malowanie, projekty i stół narzędziowy.",
+      "Dependencies": [
+        "stellardrive-odyssey-core"
+      ],
+      "Compatibility": "StellarDrive Demo 0.8.2",
+      "License": "Brak licencji redystrybucji",
+      "Redistributable": false,
+      "Files": [
+        {
+          "Entry": "stellardrive-mods-30b08e62da753ccf0a5901ea38a26c1aca1ef363/dist/Mods/Odyssey.Gear.dll",
+          "Sha256": "4DB8A7BF3DF7437E17869DAFB2218F2DC737174CA67C6427BF5088F992C0FBD7",
+          "Target": "Mods/Odyssey.Gear.dll",
+          "PreserveExisting": false,
+          "ArchiveId": "odyssey"
+        }
+      ]
+    },
+    {
+      "Id": "stellardrive-odyssey-logic",
+      "Name": "Odyssey Logic",
+      "Version": "1.0.2",
+      "Author": "mateu",
+      "Description": "Panele informacyjne oraz sygnały energii, gazu i fotela pilota.",
+      "Dependencies": [
+        "stellardrive-odyssey-core"
+      ],
+      "Compatibility": "StellarDrive Demo 0.8.2",
+      "License": "Brak licencji redystrybucji",
+      "Redistributable": false,
+      "Files": [
+        {
+          "Entry": "stellardrive-mods-30b08e62da753ccf0a5901ea38a26c1aca1ef363/dist/Mods/Odyssey.Logic.dll",
+          "Sha256": "EA22489F34E983F033AA9591A29887265AE791DF965C8D8D261027D73DD647BE",
+          "Target": "Mods/Odyssey.Logic.dll",
+          "PreserveExisting": false,
+          "ArchiveId": "odyssey"
+        }
+      ]
+    },
+    {
+      "Id": "stellardrive-odyssey-mining",
+      "Name": "Odyssey Mining",
+      "Version": "1.0.1",
+      "Author": "mateu",
+      "Description": "Nowe złoża, uran, szkło i koparka.",
+      "Dependencies": [
+        "stellardrive-odyssey-core"
+      ],
+      "Compatibility": "StellarDrive Demo 0.8.2",
+      "License": "Brak licencji redystrybucji",
+      "Redistributable": false,
+      "Files": [
+        {
+          "Entry": "stellardrive-mods-30b08e62da753ccf0a5901ea38a26c1aca1ef363/dist/Mods/Odyssey.Mining.dll",
+          "Sha256": "DA2F23E793A453E9D2C5B0CCC0ACE74757C01AD72CFDA620980F42F19F572441",
+          "Target": "Mods/Odyssey.Mining.dll",
+          "PreserveExisting": false,
+          "ArchiveId": "odyssey"
+        }
+      ]
+    },
+    {
+      "Id": "stellardrive-odyssey-power",
+      "Name": "Odyssey Power",
+      "Version": "1.1.6",
+      "Author": "mateu",
+      "Description": "Reaktory jądrowe, napęd wodorowy, elektrolizer, pompy i zbiorniki.",
+      "Dependencies": [
+        "stellardrive-odyssey-core"
+      ],
+      "Compatibility": "StellarDrive Demo 0.8.2",
+      "License": "Brak licencji redystrybucji",
+      "Redistributable": false,
+      "Files": [
+        {
+          "Entry": "stellardrive-mods-30b08e62da753ccf0a5901ea38a26c1aca1ef363/dist/Mods/Odyssey.Power.dll",
+          "Sha256": "C63807B12ECFAAED0E81E138185A960DC4F0A0B5CC3CE509CC0F257F46728911",
+          "Target": "Mods/Odyssey.Power.dll",
+          "PreserveExisting": false,
+          "ArchiveId": "odyssey"
+        }
+      ]
+    },
+    {
+      "Id": "stellardrive-odyssey-tweaks",
+      "Name": "Odyssey Tweaks",
+      "Version": "1.2.3",
+      "Author": "mateu",
+      "Description": "Poprawki wydajności, przewodów i kamera pościgowa.",
+      "Dependencies": [
+        "stellardrive-odyssey-core"
+      ],
+      "Compatibility": "StellarDrive Demo 0.8.2",
+      "License": "Brak licencji redystrybucji",
+      "Redistributable": false,
+      "Files": [
+        {
+          "Entry": "stellardrive-mods-30b08e62da753ccf0a5901ea38a26c1aca1ef363/dist/Mods/Odyssey.Tweaks.dll",
+          "Sha256": "C6D7821F2CBE851C1E31CA01A0A798558B287A535CE20C2C535CE9B30F4DD052",
+          "Target": "Mods/Odyssey.Tweaks.dll",
+          "PreserveExisting": false,
+          "ArchiveId": "odyssey"
+        }
+      ]
+    },
+    {
+      "Id": "stellardrive-photomode",
+      "Name": "Photo Mode",
+      "Version": "0.1.0",
+      "Author": "mateu",
+      "Description": "Tryb fotograficzny z zatrzymaniem czasu i swobodną kamerą.",
+      "Dependencies": [],
+      "Compatibility": "StellarDrive Demo 0.8.2",
+      "License": "Brak licencji redystrybucji",
+      "Redistributable": false,
+      "Files": [
+        {
+          "Entry": "stellardrive-mods-30b08e62da753ccf0a5901ea38a26c1aca1ef363/dist/Mods/PhotoMode.dll",
+          "Sha256": "8F184CD5C2221E71FEAD1608D013CFB6B402BBFFA5AB42A2C82FA8584259C725",
+          "Target": "Mods/PhotoMode.dll",
+          "PreserveExisting": false,
+          "ArchiveId": "odyssey"
+        }
+      ]
+    },
+    {
+      "Id": "stellardrive-pickblock",
+      "Name": "Pick Block",
+      "Version": "0.3.4",
+      "Author": "mateu",
+      "Description": "Wybieranie części środkowym przyciskiem myszy i budowanie obszarowe.",
+      "Dependencies": [],
+      "Compatibility": "StellarDrive Demo 0.8.2",
+      "License": "Brak licencji redystrybucji",
+      "Redistributable": false,
+      "Files": [
+        {
+          "Entry": "stellardrive-mods-30b08e62da753ccf0a5901ea38a26c1aca1ef363/dist/Mods/PickBlock.dll",
+          "Sha256": "DAFF0E6E73E7A479B103A54EB0DEEB29B6B07A1A77A382F9194751E89C0C30CE",
+          "Target": "Mods/PickBlock.dll",
+          "PreserveExisting": false,
+          "ArchiveId": "odyssey"
+        }
+      ]
+    },
+    {
+      "Id": "stellardrive-planetunlock",
+      "Name": "Planet Unlock",
+      "Version": "0.1.2",
+      "Author": "mateu",
+      "Description": "Eksperymentalne wczytywanie planet układu 442 Otrera.",
+      "Dependencies": [],
+      "Compatibility": "StellarDrive Demo 0.8.2",
+      "License": "Brak licencji redystrybucji",
+      "Redistributable": false,
+      "Files": [
+        {
+          "Entry": "stellardrive-mods-30b08e62da753ccf0a5901ea38a26c1aca1ef363/dist/Mods/PlanetUnlock.dll",
+          "Sha256": "A852B992EEFC806900EC14E28E0E37FCBC1FA6DAF014EC6726207A952E2BC2FB",
+          "Target": "Mods/PlanetUnlock.dll",
+          "PreserveExisting": false,
+          "ArchiveId": "odyssey"
+        }
+      ]
+    },
+    {
+      "Id": "stellardrive-reentry",
+      "Name": "Reentry",
+      "Version": "0.2.1",
+      "Author": "mateu",
+      "Description": "Efekty plazmy i iskier przy szybkim wejściu w atmosferę.",
+      "Dependencies": [],
+      "Compatibility": "StellarDrive Demo 0.8.2",
+      "License": "Brak licencji redystrybucji",
+      "Redistributable": false,
+      "Files": [
+        {
+          "Entry": "stellardrive-mods-30b08e62da753ccf0a5901ea38a26c1aca1ef363/dist/Mods/Reentry.dll",
+          "Sha256": "951652B813122F2EDC794A66235A95D1FD45ED4C7FAD2F63E4FB06F0D885EA3B",
+          "Target": "Mods/Reentry.dll",
+          "PreserveExisting": false,
+          "ArchiveId": "odyssey"
+        }
+      ]
+    },
+    {
+      "Id": "stellardrive-resourcetweaks",
+      "Name": "Resource Tweaks",
+      "Version": "0.5.2",
+      "Author": "mateu",
+      "Description": "Więcej surowców, większe stosy i rozszerzony ekwipunek.",
+      "Dependencies": [],
+      "Compatibility": "StellarDrive Demo 0.8.2",
+      "License": "Brak licencji redystrybucji",
+      "Redistributable": false,
+      "Files": [
+        {
+          "Entry": "stellardrive-mods-30b08e62da753ccf0a5901ea38a26c1aca1ef363/dist/Mods/ResourceTweaks.dll",
+          "Sha256": "18C35D0C1EB55F29598C12A6B4F6DA9F68B073BCAD6B6CBB3ED113A461C2C7AB",
+          "Target": "Mods/ResourceTweaks.dll",
+          "PreserveExisting": false,
+          "ArchiveId": "odyssey"
+        }
+      ]
+    },
+    {
+      "Id": "stellardrive-sharedpiloting",
+      "Name": "Shared Piloting",
+      "Version": "0.1.1",
+      "Author": "mateu",
+      "Description": "Sterowanie statkiem z kilku foteli pilota.",
+      "Dependencies": [],
+      "Compatibility": "StellarDrive Demo 0.8.2",
+      "License": "Brak licencji redystrybucji",
+      "Redistributable": false,
+      "Files": [
+        {
+          "Entry": "stellardrive-mods-30b08e62da753ccf0a5901ea38a26c1aca1ef363/dist/Mods/SharedPiloting.dll",
+          "Sha256": "C288E7444EDFBD23C5C6782E024DABF2CBA44977C3A2DEE63F479BB0F0A07A8F",
+          "Target": "Mods/SharedPiloting.dll",
+          "PreserveExisting": false,
+          "ArchiveId": "odyssey"
+        }
+      ]
+    },
+    {
+      "Id": "stellardrive-shipsafety",
+      "Name": "Ship Safety",
+      "Version": "0.6.3",
+      "Author": "mateu",
+      "Description": "Ograniczenia prędkości i poprawki fizyki oraz kolizji statków.",
+      "Dependencies": [],
+      "Compatibility": "StellarDrive Demo 0.8.2",
+      "License": "Brak licencji redystrybucji",
+      "Redistributable": false,
+      "Files": [
+        {
+          "Entry": "stellardrive-mods-30b08e62da753ccf0a5901ea38a26c1aca1ef363/dist/Mods/ShipSafety.dll",
+          "Sha256": "64D06C9E87244D16D2194520B95788CA14784B90AC67D436D6C981E96F117E65",
+          "Target": "Mods/ShipSafety.dll",
+          "PreserveExisting": false,
+          "ArchiveId": "odyssey"
+        }
+      ]
+    },
+    {
+      "Id": "stellardrive-velocityindicator",
+      "Name": "Velocity Indicator",
+      "Version": "0.1.0",
+      "Author": "mateu",
+      "Description": "Czytelny wskaźnik prędkości względem powierzchni planety.",
+      "Dependencies": [],
+      "Compatibility": "StellarDrive Demo 0.8.2",
+      "License": "Brak licencji redystrybucji",
+      "Redistributable": false,
+      "Files": [
+        {
+          "Entry": "stellardrive-mods-30b08e62da753ccf0a5901ea38a26c1aca1ef363/dist/Mods/VelocityIndicator.dll",
+          "Sha256": "00D51F2FE4DE6E0A0F76C1230181941F821F5E4C59B77187D46D02051C01945E",
+          "Target": "Mods/VelocityIndicator.dll",
+          "PreserveExisting": false,
+          "ArchiveId": "odyssey"
+        }
+      ]
+    },
+    {
+      "Id": "stellardrive-warpunlock",
+      "Name": "Warp Unlock",
+      "Version": "0.1.2",
+      "Author": "mateu",
+      "Description": "Odblokowanie badań napędu Warp w wersji demonstracyjnej.",
+      "Dependencies": [],
+      "Compatibility": "StellarDrive Demo 0.8.2",
+      "License": "Brak licencji redystrybucji",
+      "Redistributable": false,
+      "Files": [
+        {
+          "Entry": "stellardrive-mods-30b08e62da753ccf0a5901ea38a26c1aca1ef363/dist/Mods/WarpUnlock.dll",
+          "Sha256": "A6C523D409354D756A32C7833B6D856131914B1E90B94C9F91CF75AB944FB6FC",
+          "Target": "Mods/WarpUnlock.dll",
+          "PreserveExisting": false,
+          "ArchiveId": "odyssey"
+        }
+      ]
+    },
+    {
+      "Id": "stellardrive-water",
+      "Name": "Water",
+      "Version": "0.6.1",
+      "Author": "mateu",
+      "Description": "Woda w jeziorach i oceanach, pływanie, wyporność i efekty zanurzenia.",
+      "Dependencies": [],
+      "Compatibility": "StellarDrive Demo 0.8.2",
+      "License": "Brak licencji redystrybucji",
+      "Redistributable": false,
+      "Files": [
+        {
+          "Entry": "stellardrive-mods-30b08e62da753ccf0a5901ea38a26c1aca1ef363/dist/Mods/Water.dll",
+          "Sha256": "180DDEEBE1F05D0A99D23BA0CA237A2A9CD7C2B39E26153E6BE91C05D172423B",
+          "Target": "Mods/Water.dll",
+          "PreserveExisting": false,
+          "ArchiveId": "odyssey"
+        }
+      ]
+    },
+    {
+      "Id": "community-sdmodkit",
+      "Name": "SDModKit",
+      "Version": "1.3.3",
+      "Author": "Krunk",
+      "Description": "Biblioteka wymagana przez nowe części, maszyny i narzędzia społeczności.",
+      "Dependencies": [],
+      "Compatibility": "Demo 0.8.2",
+      "License": "Pobieranie oryginalnego wydania autora; paczka nie zawiera cudzej DLL.",
+      "Redistributable": false,
+      "Files": [
+        {
+          "Target": "Mods/SDModKit.dll",
+          "ArchiveId": "community-sdmodkit",
+          "Entry": "Mods/SDModKit.dll",
+          "Sha256": "1d28675f69e558140fc73e432a0b58e9da4d2c34b664d3d566f29d28f9d20bc3",
+          "PreserveExisting": false
+        }
+      ]
+    },
+    {
+      "Id": "community-stellardrive-arsenal",
+      "Name": "Arsenal",
+      "Version": "1.12.1",
+      "Author": "tidic84",
+      "Description": "Broń ręczna, uzbrojenie statków, obrotowe wieżyczki i uszkodzenia kadłuba. W multiplayerze wymagany u wszystkich graczy.",
+      "Dependencies": [
+        "community-sdmodkit"
+      ],
+      "Compatibility": "Demo 0.8.2",
+      "License": "Pobieranie oryginalnego wydania autora; paczka nie zawiera cudzej DLL.",
+      "Redistributable": false,
+      "Files": [
+        {
+          "Target": "Mods/Arsenal.dll",
+          "ArchiveId": "community-stellardrive-arsenal",
+          "Entry": "Mods/Arsenal.dll",
+          "Sha256": "0952229137a17f71057b1ce849ff07d75e4a2b292873acf622de8a08327449f0",
+          "PreserveExisting": false
+        }
+      ]
+    },
+    {
+      "Id": "community-stellardrive-balancedmaterials",
+      "Name": "Balanced Materials",
+      "Version": "1.0.0",
+      "Author": "jollyname",
+      "Description": "Zmiana wytrzymałości materiałów konstrukcyjnych według balansu autora.",
+      "Dependencies": [],
+      "Compatibility": "Demo 0.8.2",
+      "License": "Pobieranie oryginalnego wydania autora; paczka nie zawiera cudzej DLL.",
+      "Redistributable": false,
+      "Files": [
+        {
+          "Target": "Mods/BalancedMaterials.dll",
+          "ArchiveId": "community-stellardrive-balancedmaterials",
+          "Entry": "Mods/BalancedMaterials.dll",
+          "Sha256": "007d59e0c184584cff73a724263f4823906d8beb9ccb0887abf717c991c4cdbc",
+          "PreserveExisting": false
+        }
+      ]
+    },
+    {
+      "Id": "community-stellardrive-breakerbox",
+      "Name": "Breaker Box mod",
+      "Version": "1.2.0",
+      "Author": "Ghost",
+      "Description": "Skrzynka z czterema niezależnymi kanałami sygnałowymi, wyłącznikiem głównym i zdalnym rozłączaniem.",
+      "Dependencies": [
+        "community-sdmodkit"
+      ],
+      "Compatibility": "Demo 0.8.2",
+      "License": "Pobieranie oryginalnego wydania autora; paczka nie zawiera cudzej DLL.",
+      "Redistributable": false,
+      "Files": [
+        {
+          "Target": "Mods/BreakerBoxMod.dll",
+          "ArchiveId": "community-stellardrive-breakerbox",
+          "Entry": "Mods/BreakerBoxMod.dll",
+          "Sha256": "e73829d7279c993d826de9192411c7ce8fb3f217459cfc4696a602a8998c3a10",
+          "PreserveExisting": false
+        }
+      ]
+    },
+    {
+      "Id": "community-stellardrive-chess",
+      "Name": "Chess",
+      "Version": "1.0.0",
+      "Author": "EndlessSkys",
+      "Description": "Szachy w świecie gry.",
+      "Dependencies": [
+        "community-sdmodkit"
+      ],
+      "Compatibility": "Demo 0.8.2",
+      "License": "Pobieranie oryginalnego wydania autora; paczka nie zawiera cudzej DLL.",
+      "Redistributable": false,
+      "Files": [
+        {
+          "Target": "Mods/Chess.dll",
+          "ArchiveId": "community-stellardrive-chess",
+          "Entry": "StellarDrive-Chess/Mods/Chess.dll",
+          "Sha256": "33fa3a422eea4957cd5c04d3c49674cd083b73d0b7a467c4afa44be6b4911a26",
+          "PreserveExisting": false
+        }
+      ]
+    },
+    {
+      "Id": "community-stellardrive-customseat",
+      "Name": "Command Seat",
+      "Version": "1.1.1",
+      "Author": "tidic84",
+      "Description": "Fotel sterowania z dodatkowymi wyjściami sygnałowymi i przypisywaniem klawiszy.",
+      "Dependencies": [
+        "community-sdmodkit"
+      ],
+      "Compatibility": "Demo 0.8.2",
+      "License": "Pobieranie oryginalnego wydania autora; paczka nie zawiera cudzej DLL.",
+      "Redistributable": false,
+      "Files": [
+        {
+          "Target": "Mods/KeySeat.dll",
+          "ArchiveId": "community-stellardrive-customseat",
+          "Entry": "Mods/KeySeat.dll",
+          "Sha256": "45d2c311d1067a1dcfd8dfe630136713da38cbc2150224c1022a51e65b0f9859",
+          "PreserveExisting": false
+        }
+      ]
+    },
+    {
+      "Id": "community-stellardrive-demo-satisfactor",
+      "Name": "Stellar Industries",
+      "Version": "0.20.0",
+      "Author": "Romalaure",
+      "Description": "Fabryki: 30 maszyn, przenośniki, słupy elektryczne, 73 przedmioty i nowe badania. Poradnik pod G, panel fabryki pod F7.",
+      "Dependencies": [
+        "community-sdmodkit"
+      ],
+      "Compatibility": "Demo 0.8.2",
+      "License": "Pobieranie oryginalnego wydania autora; paczka nie zawiera cudzej DLL.",
+      "Redistributable": false,
+      "Files": [
+        {
+          "Target": "Mods/StellarIndustries.dll",
+          "ArchiveId": "community-stellardrive-demo-satisfactor",
+          "Entry": "Mods/StellarIndustries.dll",
+          "Sha256": "56596bf91b973488d4772dda20ac1ff2310bd181789ff76e40534deebda37169",
+          "PreserveExisting": false
+        }
+      ]
+    },
+    {
+      "Id": "community-stellardrive-demo-tf-advanced",
+      "Name": "StellarDrive Demo TF Advanced",
+      "Version": "0.45.1",
+      "Author": "Romalaure",
+      "Description": "Rozbudowa świata: planety, stacje, części konstrukcyjne, silniki, reaktory, osłony i wyposażenie. Z Arsenal dodaje także piratów.",
+      "Dependencies": [
+        "community-sdmodkit"
+      ],
+      "Compatibility": "Demo 0.8.2",
+      "License": "Pobieranie oryginalnego wydania autora; paczka nie zawiera cudzej DLL.",
+      "Redistributable": false,
+      "Files": [
+        {
+          "Target": "Mods/StellarDriveDemoTFAdvanced.dll",
+          "ArchiveId": "community-stellardrive-demo-tf-advanced",
+          "Entry": "Mods/StellarDriveDemoTFAdvanced.dll",
+          "Sha256": "0a55672a80f9ba783bc910ebc617f9881084f8ea8baf5e114ad97276b94b4fe7",
+          "PreserveExisting": false
+        }
+      ]
+    },
+    {
+      "Id": "community-stellardrive-demomodlist",
+      "Name": "Demo Mod List",
+      "Version": "1.0.0",
+      "Author": "EndlessSkys",
+      "Description": "Zapisuje informację o używanych modach razem ze światem.",
+      "Dependencies": [],
+      "Compatibility": "Demo 0.8.2",
+      "License": "Pobieranie oryginalnego wydania autora; paczka nie zawiera cudzej DLL.",
+      "Redistributable": false,
+      "Files": [
+        {
+          "Target": "Mods/DemoModList.dll",
+          "ArchiveId": "community-stellardrive-demomodlist",
+          "Entry": "StellarDrive-DemoModList/Mods/DemoModList.dll",
+          "Sha256": "26bcae7388aef66f92cd48869381961dbd9f00d65e2e1c00b9e632a548f4dec7",
+          "PreserveExisting": false
+        }
+      ]
+    },
+    {
+      "Id": "community-stellardrive-handybeacontracker",
+      "Name": "Handy Beacon Tracker",
+      "Version": "1.0.0",
+      "Author": "VILIK",
+      "Description": "Narzędzie do śledzenia znaczników i odnajdywania ich w świecie gry.",
+      "Dependencies": [
+        "community-sdmodkit"
+      ],
+      "Compatibility": "Demo 0.8.2",
+      "License": "Pobieranie oryginalnego wydania autora; paczka nie zawiera cudzej DLL.",
+      "Redistributable": false,
+      "Files": [
+        {
+          "Target": "Mods/HandyBeaconTracker.dll",
+          "ArchiveId": "community-stellardrive-handybeacontracker",
+          "Entry": "Mods/HandyBeaconTracker.dll",
+          "Sha256": "1665c86c221eb71fae411bb37aa368b59c415646c7a27de8bcfbff01b8555493",
+          "PreserveExisting": false
+        }
+      ]
+    },
+    {
+      "Id": "community-stellardrive-moremath",
+      "Name": "More Math",
+      "Version": "1.3.0",
+      "Author": "MausCD",
+      "Description": "Dodatkowe elementy obliczeniowe do układów logicznych.",
+      "Dependencies": [
+        "community-sdmodkit"
+      ],
+      "Compatibility": "Demo 0.8.2",
+      "License": "Pobieranie oryginalnego wydania autora; paczka nie zawiera cudzej DLL.",
+      "Redistributable": false,
+      "Files": [
+        {
+          "Target": "Mods/MoreMath.dll",
+          "ArchiveId": "community-stellardrive-moremath",
+          "Entry": "StellarDrive-MoreMath/Mods/MoreMath.dll",
+          "Sha256": "c5b09b8552c8982a98a5c74397016319338cbd1de788d17724761e3a6311ab5b",
+          "PreserveExisting": false
+        }
+      ]
+    },
+    {
+      "Id": "community-stellardrive-safetyrails",
+      "Name": "Safety Rails",
+      "Version": "1.0.0",
+      "Author": "EndlessSkys",
+      "Description": "Barierki do budowania na statkach i konstrukcjach.",
+      "Dependencies": [
+        "community-sdmodkit"
+      ],
+      "Compatibility": "Demo 0.8.2",
+      "License": "Pobieranie oryginalnego wydania autora; paczka nie zawiera cudzej DLL.",
+      "Redistributable": false,
+      "Files": [
+        {
+          "Target": "Mods/SafetyRails.dll",
+          "ArchiveId": "community-stellardrive-safetyrails",
+          "Entry": "StellarDrive-SafetyRails/Mods/SafetyRails.dll",
+          "Sha256": "502528ba818b71cef3f52ab00823400ed1a9d7b79692c1942b684845361ce693",
+          "PreserveExisting": false
+        }
+      ]
+    },
+    {
+      "Id": "community-stellardrive-unlimitedplayers",
+      "Name": "Unlimited players",
+      "Version": "1.0.0",
+      "Author": "VILIK",
+      "Description": "Zwiększenie dostępnego limitu graczy. Działanie wieloosobowe tej paczki wymaga osobnej weryfikacji.",
+      "Dependencies": [],
+      "Compatibility": "Demo 0.8.2",
+      "License": "Pobieranie oryginalnego wydania autora; paczka nie zawiera cudzej DLL.",
+      "Redistributable": false,
+      "Files": [
+        {
+          "Target": "Mods/UnlimitedPlayers.dll",
+          "ArchiveId": "community-stellardrive-unlimitedplayers",
+          "Entry": "Mods/UnlimitedPlayers.dll",
+          "Sha256": "642a0eb654ffcd6cc9f9adb8dc1c5549638a8ef529199da7fa9a6e5bf951ea05",
+          "PreserveExisting": false
+        }
+      ]
+    },
+    {
+      "Id": "community-stellardrivedemo-onewaytransfers",
+      "Name": "One-Way Transfers",
+      "Version": "1.1.0",
+      "Author": "GruenerAdler",
+      "Description": "Jednokierunkowe elementy przesyłowe do instalacji statku.",
+      "Dependencies": [
+        "community-sdmodkit"
+      ],
+      "Compatibility": "Demo 0.8.2",
+      "License": "Pobieranie oryginalnego wydania autora; paczka nie zawiera cudzej DLL.",
+      "Redistributable": false,
+      "Files": [
+        {
+          "Target": "Mods/OneWayTransfers.dll",
+          "ArchiveId": "community-stellardrivedemo-onewaytransfers",
+          "Entry": "Mods/OneWayTransfers.dll",
+          "Sha256": "1b4ab65d8c836d24d110837842873d3bf3ae8a2b08d815f8a33aec86b742338a",
+          "PreserveExisting": false
+        }
+      ]
+    },
+    {
+      "Id": "community-stellardriveitemlines",
+      "Name": "Item Lines",
+      "Version": "0.1.2",
+      "Author": "Krunk",
+      "Description": "Linie przesyłające przedmioty pomiędzy urządzeniami.",
+      "Dependencies": [
+        "community-sdmodkit"
+      ],
+      "Compatibility": "Demo 0.8.2",
+      "License": "Pobieranie oryginalnego wydania autora; paczka nie zawiera cudzej DLL.",
+      "Redistributable": false,
+      "Files": [
+        {
+          "Target": "Mods/ItemLines.dll",
+          "ArchiveId": "community-stellardriveitemlines",
+          "Entry": "Mods/ItemLines.dll",
+          "Sha256": "f81b1ce2f734cdd6bf79e346098afb8866460b1f69e43279937bea9e38b648f9",
+          "PreserveExisting": false
+        }
+      ]
+    },
+    {
+      "Id": "community-stellardriveupgradetable",
+      "Name": "Upgrade Table",
+      "Version": "0.1.2",
+      "Author": "Krunk",
+      "Description": "Stół ulepszeń dla wyposażenia obsługiwanego przez mody.",
+      "Dependencies": [
+        "community-sdmodkit"
+      ],
+      "Compatibility": "Demo 0.8.2",
+      "License": "Pobieranie oryginalnego wydania autora; paczka nie zawiera cudzej DLL.",
+      "Redistributable": false,
+      "Files": [
+        {
+          "Target": "Mods/UpgradeTable.dll",
+          "ArchiveId": "community-stellardriveupgradetable",
+          "Entry": "Mods/UpgradeTable.dll",
+          "Sha256": "66ca5e51ee3f5c6d214092c2c0337a422f9102d83fad6ff19db745d6ca774794",
+          "PreserveExisting": false
+        }
+      ]
+    },
+    {
+      "Id": "stellardrive-sunrays",
+      "Name": "Sun Rays",
+      "Version": "0.1.0",
+      "Author": "mateu",
+      "Description": "Promienie słońca przechodzące przez przerwy w chmurach. Dodatek graficzny może zwiększyć obciążenie GPU.",
+      "Dependencies": [],
+      "Compatibility": "Demo 0.8.2",
+      "License": "Brak licencji redystrybucji; oryginalne źródło autora",
+      "Redistributable": false,
+      "Files": [
+        {
+          "Target": "Mods/SunRays.dll",
+          "DownloadUrl": "https://raw.githubusercontent.com/FalconDevX/stellardrive-mods/c11ff20a5c1c1feb91235bc7b6045dafe8a426e5/dist/Mods/SunRays.dll",
+          "Sha256": "59d32f31e5e8d9842127aacad9e391a36ade8e369ed91f01e2f9a080643c3219",
+          "PreserveExisting": false
+        }
+      ]
+    },
+    {
+      "Id": "stellardrive-gamemode",
+      "Name": "StellarDrive GameMode / Commands",
+      "Version": "2.4.1",
+      "Author": "Commands contributors + Codex",
+      "Description": "Suwak autozapisu w ustawieniach Options → Gameplay: od 20 sekund do 1 godziny, ustawiany przez hosta i zapamiętywany. Zachowano Blueprint Tool w kooperacji, LIMITED/UNLIMITED, surowce i wygląd kapsuły.",
+      "Dependencies": [],
+      "Compatibility": "Demo 0.8.2",
+      "License": "CC BY-SA 4.0 — własny kod moda; gra i biblioteki gry nie są dołączone.",
+      "Redistributable": true,
+      "Files": [
+        {
+          "Target": "Mods/StellarDrive.GameMode.dll",
+          "DownloadUrl": "https://stella-drive-mods-odyssey.tera78326.chatgpt.site/releases/stellardrive-gamemode/2.4.1/StellarDrive.GameMode.dll",
+          "Sha256": "fb307951b5357cda31f3d790defc7f828ec182c996d09dea6ce135e2583ee3d6",
+          "PreserveExisting": false
+        }
+      ]
+    }
+  ]
+}

@@ -13,6 +13,16 @@ $data = Split-Path -Parent $Config
 $stopFlag = Join-Path $data 'supervisor.stop'
 $cfg = Get-Content -LiteralPath $Config -Raw | ConvertFrom-Json
 if (-not $cfg.AutoHost) { throw 'AutoHost jest wyłączony w konfiguracji.' }
+$packPath = Join-Path $PSScriptRoot 'community-modpack.json'
+if (-not (Test-Path -LiteralPath $packPath -PathType Leaf)) { throw 'Brak manifestu pelnej paczki. Uruchom instalator serwera 0.3.0 lub nowszy.' }
+$pack = Get-Content -LiteralPath $packPath -Raw -Encoding UTF8 | ConvertFrom-Json
+if (@($pack.Mods).Count -ne 39) { throw 'Nieprawidlowa liczba modow w paczce.' }
+foreach ($mod in $pack.Mods) { foreach ($file in $mod.Files) {
+ $target = [IO.Path]::GetFullPath((Join-Path $GameDir $file.Target))
+ if (-not $target.StartsWith($GameDir.TrimEnd('\')+'\',[StringComparison]::OrdinalIgnoreCase)) { throw 'Nieprawidlowa sciezka moda.' }
+ if (-not (Test-Path -LiteralPath $target -PathType Leaf)) { throw ('Brak moda: '+$mod.Name+'. Uruchom ponownie instalator 0.3.0.') }
+ if (-not $file.PreserveExisting -and (Get-FileHash -LiteralPath $target -Algorithm SHA256).Hash -ne $file.Sha256) { throw ('Inna wersja moda: '+$mod.Name+'. Uruchom ponownie instalator 0.3.0.') }
+} }
 foreach ($required in @($exe,(Join-Path $GameDir 'Mods\StellarDrive.AutoHost.dll'),(Join-Path $GameDir 'MelonLoader\net35\MelonLoader.dll'),$cfg.WorldPath)) {
  if (-not (Test-Path -LiteralPath $required -PathType Leaf)) { throw "Brak pliku: $required" }
 }

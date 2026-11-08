@@ -1,4 +1,4 @@
-# StellarDrive Dedicated AutoHost — 0.2.1-alpha.1
+# StellarDrive Dedicated AutoHost — 0.3.0-alpha.1
 
 Instalator Windows i panel dla rzeczywistego prototypu AutoHost 0.1.2-alpha.1. **To wydanie eksperymentalne, nie potwierdzony serwer produkcyjny 24/7.** Lokalnie sprawdzono natywny serwer Steam/FishNet bez lokalnego gracza i bez grafiki. Nie wykonano testu drugiego konta Steam ani Windows VPS. Nie nazywamy samego procesu działającym multiplayerem.
 
@@ -7,7 +7,7 @@ Instalator Windows i panel dla rzeczywistego prototypu AutoHost 0.1.2-alpha.1. *
 1. Na VPS przygotuj własną instalację StellarDrive Demo 0.8.2 i klienta Steam. Zaloguj Steam w tej samej sesji Windows, w której będzie działał serwer.
 2. Skopiuj **cały folder świata**, razem z plikami dodatków, do osobnego katalogu na dysku z miejscem, np. `S:\saves\DedicatedWorld`. Zrób kopię zapasową. Użyj świata zgodnego z zainstalowaną paczką części.
 3. Uruchom `StellarDrive-Server-Setup.exe`. Wybierz folder gry (wykrywany z bibliotek Steam) oraz `world.json`. Kliknij **Dalej → Instaluj → Zakończ**.
-4. Instalator może pobrać brakujący MelonLoader 0.7.3 z oficjalnego wydania GitHub. Wymaga wtedy internetu; sprawdza przypięty SHA-256. Innego loadera ani BepInEx nie zastępuje. Pozostałych modów nie pobiera i nie usuwa.
+4. Instalator może pobrać brakujący MelonLoader 0.7.3 z oficjalnego wydania GitHub. Wymaga wtedy internetu; sprawdza przypięty SHA-256. Innego loadera ani BepInEx nie zastępuje. Instaluje także wszystkie 39 modów Community 1.2.0 z oryginalnych źródeł, sprawdzając archiwa i każdy plik SHA-256. Nie usuwa innych modów.
 5. Panel otwiera się po instalacji. Sprawdź ustawienia i wybierz **START**. Statusy Steam i multiplayer pochodzą z pliku zapisanego przez moda, nie z samej obecności procesu.
 6. Po starcie panel można zamknąć. Proces PowerShell nadzoruje grę niezależnie od panelu. **Ta niezależność wynika z implementacji; końcowy test GUI na VPS pozostaje wymagany.**
 7. **STOP I ZAPIS** prosi mod o zapis i zamknięcie, czeka na proces oraz nadzorcę. Nie wymusza zabicia gry. Zatrzymaj serwer w ten sposób przed restartem Windows.
@@ -30,11 +30,11 @@ Analiza tej wersji wykazała **Steam Rich Presence + FishySteamworks/Multipass**
 
 Znajomy ma próbować dołączenia z listy znajomych Steam do konta VPS. Dokładny przebieg z drugim kontem musi zostać potwierdzony na VPS. Nie twierdzimy, że UDP 27863 lub `--bind`/`--port` konfigurują ten transport. Instalator nie otwiera portów zapory. Steam musi mieć dostęp do swojej infrastruktury; restrykcyjną sieć należy sprawdzić w teście połączenia.
 
-Klienci powinni mieć identyczne wersje modów dodających części i ich zależności. AutoHost ma być na serwerze, nie jest wymaganym protokołem klienta. Zgodność zdalnego klienta nadal wymaga testu. Nie dołączamy 39 cudzych modów ani gry. GameMode korzystający z flagi lokalnego hosta może wymagać dodatkowej integracji dla komend administracyjnych.
+Klienci powinni mieć identyczne wersje modów dodających części i ich zależności. AutoHost ma być na serwerze, nie jest wymaganym protokołem klienta. Zgodność zdalnego klienta nadal wymaga testu. Nie osadzamy 39 cudzych DLL ani gry w EXE. Instalator pobiera dodatki bezpośrednio z przypiętych źródeł autorów. GameMode korzystający z flagi lokalnego hosta może wymagać dodatkowej integracji dla komend administracyjnych.
 
 ## Panel, konfiguracja i zapis
 
-Panel ma Start, Stop z zapisem, Restart, log nadzorcy i gry, status Steam/serwera, liczbę graczy, wybór świata, limit graczy, tylko znajomych, autozapis 20–3600 s i listę DLL. Zapis ustawień wymaga zatrzymania serwera. Ostatni wybrany świat jest przechowywany w `StellarDriveServer\autohost.json`.
+Panel ma kontrolę kompletności 39 modów, Start, Stop z zapisem, Restart, log nadzorcy i gry, status Steam/serwera, liczbę graczy, wybór świata, limit graczy, tylko znajomych, autozapis 20–3600 s i listę DLL. Zapis ustawień wymaga zatrzymania serwera. Ostatni wybrany świat jest przechowywany w `StellarDriveServer\autohost.json`.
 
 Świat zapisuje natywny `GameSaver`. Zatrzymane są etapy aktualizacji fizyki świata, kiedy nie ma graczy. Wcześniejszy test pełnego świata potwierdził brak zmiany zegara i stanu podczas pustej sesji oraz odtworzenie po restarcie. Nie jest to test wszystkich własnych timerów każdego dodatku. Szczegóły i hash DLL: [raport moda](Payload/REPORT.md), [dowody](Payload/evidence.json).
 
@@ -65,3 +65,11 @@ Po prośbie użytkownika nie wykonujemy dalszych uruchomień na jego PC. Kreator
 Inspiracja adaptacją zapisu headless: [EndlessSkys/StellarDrive-DedicatedServer](https://github.com/3ndl3ssSkys/StellarDrive-DedicatedServer), licencja MIT dołączona. Nie jest to deklaracja wymagań ani działania tamtego projektu na naszym VPS.
 
 
+
+## Pełna paczka serwera od 0.3.0
+
+Instalator instaluje Community 1.2.0 (39 modów, w tym zależności) oraz osobno AutoHost. Podsumowanie przed Instaluj pokazuje wszystkie nazwy i wersje. Pobrania, staging, logi i kopie modpacka są w <gra>\StellarDriveCommunity, na dysku gry. Błędne pobranie lub kolizja nie jest ignorowana. Etap Community ma własny rollback. Jeśli późniejsza instalacja panelu nie powiedzie się, zakończony etap Community pozostaje; można ponowić instalację. Odinstalowanie panelu/AutoHost zachowuje Community oraz światy.
+
+Start w panelu i skrypt nadzorcy sprawdzają wymagane pliki wszystkich 39 modów. Brak lub inna wersja blokuje start i wskazuje błąd. Nie uruchamiaj StellarDrive.exe ręcznie: kliknij START w Server Managerze, aby przekazać --autohost-config i parametry headless. Komunikat 'AutoHost nieaktywny: brak --autohost-config' oznacza uruchomienie bez wymaganej konfiguracji.
+
+Kontrole CI używają sztucznych plików testowych i nie uruchamiają gry. Obejmują manifest 39 modów, zależności, archiwa, rollback, ponowną instalację i ochronę cudzych plików. Nie zastępują testu pełnego pobrania/instalacji na VPS ani multiplayera.

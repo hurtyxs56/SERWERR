@@ -9,6 +9,8 @@ try {
  }
  & powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -File scripts/Validate-PowerShell51.ps1 -Directory (Join-Path $PSScriptRoot 'Payload')
  if ($LASTEXITCODE -ne 0) { throw 'Windows PowerShell 5.1 syntax validation failed' }
+ & $DotNet run --project CommunityTests/CommunityTests.csproj -c Release
+ if ($LASTEXITCODE -ne 0) { throw 'Community installer regression tests failed' }
  $evidence=Get-Content -LiteralPath 'Payload/evidence.json' -Raw | ConvertFrom-Json
  $hash=(Get-FileHash -LiteralPath 'Payload/StellarDrive.AutoHost.dll' -Algorithm SHA256).Hash
  if($hash -ne $evidence.dllSha256 -or $hash -ne '3B794EF574676FC4A71E79C21716A32D2A10F86D8932668244EBDCAE6D4BD19E'){throw 'Niezgodny DLL / evidence.'}

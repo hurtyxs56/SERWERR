@@ -13,6 +13,7 @@ public static class ServerControl {
  public static HostStatus? Status(string game){var p=Path.Combine(ServerFiles.Root(game),"status.json");try{if(!File.Exists(p))return null;var s=ServerFiles.Read<HostStatus>(p);using var process=Process.GetProcessById(s.pid);return string.Equals(process.MainModule?.FileName,Path.Combine(game,"StellarDrive.exe"),StringComparison.OrdinalIgnoreCase)&&process.StartTime.ToUniversalTime()<=s.utc.ToUniversalTime().AddSeconds(2)?s:null;}catch(IOException){return null;}catch(JsonException){return null;}catch(ArgumentException){return null;}catch(InvalidOperationException){return null;}}
  public static Process Start(string game){
   ServerFiles.ValidateGame(game);if(ServerFiles.GameRunning(game))throw new IOException("Serwer już działa.");
+  CommunityPack.AssertComplete(game);
   var root=ServerFiles.Root(game);var config=ServerFiles.Read<ServerConfig>(Path.Combine(root,"autohost.json"));ServerFiles.ValidateConfig(config);
   if(!Process.GetProcessesByName("steam").Any())throw new IOException("Uruchom Steam i zaloguj konto posiadające Demo.");
   if(ServerFiles.Hash(Path.Combine(game,"Mods","StellarDrive.AutoHost.dll"))!=ServerFiles.ModHash)throw new IOException("AutoHost ma inną sumę kontrolną. Użyj aktualizatora zamiast podmiany pliku.");
@@ -38,7 +39,7 @@ public static class ServerControl {
  }
  public static string RegistryKey(string game)=>@"Software\Microsoft\Windows\CurrentVersion\Uninstall\"+ServerFiles.TaskName(game).Replace(" ","");
  public static void Register(string game){
-  var root=ServerFiles.Root(game);using var key=Registry.CurrentUser.CreateSubKey(RegistryKey(game));key.SetValue("DisplayName","StellarDrive Dedicated AutoHost (testowy)");key.SetValue("DisplayVersion","0.2.1-alpha.1");key.SetValue("Publisher","StellarDrive AutoHost contributors");key.SetValue("InstallLocation",root);key.SetValue("UninstallString","\""+Path.Combine(root,"StellarDrive-Server-Setup.exe")+"\" --uninstall --game \""+game+"\"");key.SetValue("NoModify",1);key.SetValue("NoRepair",1);
+  var root=ServerFiles.Root(game);using var key=Registry.CurrentUser.CreateSubKey(RegistryKey(game));key.SetValue("DisplayName","StellarDrive Dedicated AutoHost (testowy)");key.SetValue("DisplayVersion","0.3.0-alpha.1");key.SetValue("Publisher","StellarDrive AutoHost contributors");key.SetValue("InstallLocation",root);key.SetValue("UninstallString","\""+Path.Combine(root,"StellarDrive-Server-Setup.exe")+"\" --uninstall --game \""+game+"\"");key.SetValue("NoModify",1);key.SetValue("NoRepair",1);
   var type=Type.GetTypeFromProgID("WScript.Shell")??throw new IOException("Brak obsługi skrótów Windows.");dynamic shell=Activator.CreateInstance(type)!;dynamic shortcut=shell.CreateShortcut(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory),ServerFiles.TaskName(game)+".lnk"));shortcut.TargetPath=Path.Combine(root,"StellarDrive-Server-Manager.exe");shortcut.Arguments="--game \""+game+"\"";shortcut.WorkingDirectory=root;shortcut.Save();
  }
  public static void Unregister(string game){Registry.CurrentUser.DeleteSubKeyTree(RegistryKey(game),false);var link=Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory),ServerFiles.TaskName(game)+".lnk");if(File.Exists(link))File.Delete(link);}
