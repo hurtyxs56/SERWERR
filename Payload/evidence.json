@@ -1,0 +1,116 @@
+{
+  "mod": "StellarDrive.AutoHost",
+  "version": "0.1.2-alpha.1",
+  "status": "experimental-not-production-ready",
+  "date": "2026-11-08",
+  "dllSha256": "3b794ef574676fc4a71e79c21716a32d2a10f86d8932668244ebdcae6d4bd19e",
+  "reportSha256": "05945fc8f4280cacf3276b586d8656655e9f594eebc0e7356cfda94c060fecd7",
+  "environment": {
+    "os": "Windows 10 x64 local, not VPS",
+    "game": "StellarDrive Demo 0.8.2",
+    "unity": "6000.3.24f1 Mono",
+    "loader": "MelonLoader 0.7.3 net35"
+  },
+  "build": {
+    "errors": 0,
+    "warnings": 0,
+    "packagedSourceRebuildMatchesDll": true
+  },
+  "tests": {
+    "steamInitializedLocal": true,
+    "nativeSteamServerStarted": true,
+    "richPresenceApiAccepted": true,
+    "noLocalHostPlayer": true,
+    "graphicsNull": true,
+    "fullPackLoadedMods": 40,
+    "registeredParts": 434,
+    "emptyWorld": {
+      "passed": true,
+      "rotationsCompared": 80,
+      "differences": [],
+      "exclusions": [
+        "modsUsed/stampedUtc recording timestamp",
+        "equivalent quaternion sign / derived eulerAngles"
+      ],
+      "worldTimeBefore": 25958.35285278727,
+      "worldTimeAfter": 25958.35285278727
+    },
+    "restartWorld": {
+      "passed": true,
+      "rotationsCompared": 80,
+      "differences": [],
+      "exclusions": [
+        "modsUsed/stampedUtc recording timestamp",
+        "equivalent quaternion sign / derived eulerAngles"
+      ],
+      "worldTimeBefore": 25958.35285278727,
+      "worldTimeAfter": 25958.35285278727
+    },
+    "sidecars": [
+      {
+        "file": "arsenal-damage.txt",
+        "unchanged": true
+      },
+      {
+        "file": "exploration.json",
+        "unchanged": true
+      },
+      {
+        "file": "respawn.json",
+        "unchanged": true
+      },
+      {
+        "file": "SafetyRails.txt",
+        "unchanged": true
+      },
+      {
+        "file": "sdmodkit-content.json",
+        "unchanged": true
+      },
+      {
+        "file": "tfa_pirates.txt",
+        "unchanged": true
+      },
+      {
+        "file": "tfa_stations.txt",
+        "unchanged": true
+      }
+    ],
+    "originalSaves": {
+      "originalSaveFilesCompared": 127,
+      "differences": [],
+      "passed": true
+    },
+    "modIntegrity": {
+      "originalMods": 39,
+      "differences": []
+    },
+    "privateProcessBytes": 4429742080,
+    "supervisorCrashRecovery": {
+      "passed": true,
+      "firstPid": 6136,
+      "recoveredPid": 28748,
+      "delaySeconds": 10,
+      "boundedRetryObserved": "Second forced termination with MaxRestarts=1 returned supervisor exit code1 and restart-limit exception."
+    }
+  },
+  "notVerified": [
+    "Windows VPS / Server2022",
+    "second Steam account joining and gameplay",
+    "friend-only acceptance/rejection",
+    "remote world synchronization",
+    "24h stability",
+    "unattended Windows restart with Steam session",
+    "all39mod gameplay features",
+    "powerloss/full disk"
+  ],
+  "limitations": [
+    "Native headless compute/render errors remain logged",
+    "GameMode host-flag admin features not integrated",
+    "Stage equipment unfinished and not included"
+  ],
+  "publication": {
+    "published": false,
+    "reason": "Prototype remains unverified on VPS and with a second Steam account; not a finished stable release."
+  }
+}

@@ -1,0 +1,43 @@
+name: Windows installer
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['release-version.txt']
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: windows-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Build installer and manager, verify payload evidence
+        shell: pwsh
+        run: ./build.ps1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: StellarDrive-Server-Windows-x64
+          path: dist/*
+      - name: Publish experimental release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $tag = (Get-Content release-version.txt -Raw).Trim()
+          gh release create $tag ./dist/* --target $env:GITHUB_SHA --prerelease --title "Dedicated AutoHost $tag (alpha)" --notes-file CHANGELOG.md
+          if ($LASTEXITCODE -ne 0) { throw 'Release creation failed' }
+      - name: Verify public release downloads without authentication
+        shell: pwsh
+        run: |
+          $tag = (Get-Content release-version.txt -Raw).Trim()
+          foreach ($file in Get-ChildItem dist/* -File) {
+            $url = "https://github.com/$env:GITHUB_REPOSITORY/releases/download/$tag/$($file.Name)"
+            $copy = Join-Path $env:RUNNER_TEMP $file.Name
+            Invoke-WebRequest -Uri $url -OutFile $copy
+            if ((Get-FileHash $copy).Hash -ne (Get-FileHash $file.FullName).Hash) { throw "Public download mismatch: $($file.Name)" }
+          }

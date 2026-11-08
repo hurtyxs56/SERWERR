@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>StellarDrive.AutoHost</AssemblyName>
+    <Version>0.1.2</Version>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <Managed>$(GameDir)/StellarDrive_Data/Managed</Managed>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="src/*.cs" />
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+    <Reference Include="MelonLoader" HintPath="$(GameDir)/MelonLoader/net35/MelonLoader.dll" Private="false" />
+    <Reference Include="0Harmony" HintPath="$(GameDir)/MelonLoader/net35/0Harmony.dll" Private="false" />
+    <GameAssembly Include="$(Managed)/*.dll" Exclude="$(Managed)/mscorlib.dll;$(Managed)/netstandard.dll;$(Managed)/System*.dll;$(Managed)/Mono.*.dll;$(Managed)/Microsoft.*.dll" />
+    <Reference Include="@(GameAssembly)" Private="false" />
+  </ItemGroup>
+</Project>

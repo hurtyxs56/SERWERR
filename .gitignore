@@ -1,0 +1,11 @@
+**/bin/
+**/obj/
+artifacts/
+dist/
+.vs/
+*.user
+*.suo
+*.log
+game/
+saves/
+secrets/

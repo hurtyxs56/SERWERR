@@ -1,0 +1,22 @@
+name: Build mod with licensed game
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  mod:
+    runs-on: [self-hosted, Windows, X64, stellardrive]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify game and compile mod
+        shell: pwsh
+        run: |
+          if (-not $env:STELLARDRIVE_GAME_DIR) { throw 'Set STELLARDRIVE_GAME_DIR on the private runner' }
+          $assembly = Join-Path $env:STELLARDRIVE_GAME_DIR 'StellarDrive_Data/Managed/Assembly-CSharp.dll'
+          if ((Get-FileHash $assembly -Algorithm SHA256).Hash -ne '25D3F704C52EF689EA04E1EDDDCDB014914D8CBCE071F88871066A6B1375715B') { throw 'Incompatible game' }
+          dotnet build Mod/AutoHost.csproj -c Release "-p:GameDir=$env:STELLARDRIVE_GAME_DIR" -o artifacts/mod
+          if ($LASTEXITCODE -ne 0) { throw 'Build failed' }
+      - uses: actions/upload-artifact@v4
+        with:
+          name: AutoHost-candidate-requires-runtime-tests
+          path: artifacts/mod/StellarDrive.AutoHost.dll

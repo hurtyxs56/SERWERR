@@ -1,0 +1,10 @@
+{
+  "AutoHost": true,
+  "WorldPath": "S:\\saves\\DedicatedWorld\\world.json",
+  "MaxPlayers": 8,
+  "FriendsOnly": true,
+  "AutoSaveMinutes": 5,
+  "PauseWhenEmpty": true,
+  "HeadlessShaderCompatibility": true,
+  "StartupTimeoutSeconds": 600
+}
